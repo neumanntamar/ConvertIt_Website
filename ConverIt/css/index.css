@@ -1,0 +1,50 @@
+
+#aboutText{
+	width: 60%;
+	margin: auto;
+	text-align: center;	
+}
+
+#conversionList{
+	text-align:left;
+	margin-left: 150px;
+	margin-right: 150px;
+}
+.title{
+	
+	color: #80D73C;
+	font-style: oblique;
+	font-weight: bold;
+}
+h3{
+	text-align: center;
+}
+#carousel {
+	width: 960px;
+    height: 200px;
+	margin: 50px 50px 50px 100px;
+	position: relative;
+	clear: both;
+	overflow: hidden;
+	background: none;
+	}
+#carousel img {
+	visibility: hidden; /* hide images until carousel can handle them */
+	cursor: pointer; /* otherwise it's not as obvious items can be clicked */
+	}
+.split-left {
+	width: 450px;
+	float: left;
+	}
+.split-right {
+	width: 400px;
+	float: left;
+	margin-left: 10px;
+	}
+#callback-output {
+	height: 250px;
+	overflow: scroll;
+	}
+textarea#newoptions {
+width: 430px;
+}

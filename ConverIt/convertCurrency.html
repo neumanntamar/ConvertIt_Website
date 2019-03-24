@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<!--page title-->
+		<title>ConvertIt | Currency</title>
+
+		<!--import scripts for javascript and bootstrap-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 		
+		<!--incluce stylesheet-->
+		<link rel="stylesheet" href="css/convert.css">
+
+		<!--include the header in the convert page-->
+		<!--the javascript will load the header.html and assign it to the header div-->
+		<script>
+			$(function() {
+				$("#header").load("header.html");
+			});
+		</script>
+		<div id="header"></div>
+
+		<script>
+			var dropFrom;
+			var dropTo;
+			var amount = 0;
+
+			$(document).ready(function() {
+				$("#us_dollar, #euro, #canadian_dollar, #british_pound, #israeli_shekel").draggable({revert: true});
+				$("#dropTo").droppable({
+					drop : function(event, ui) {
+						$(this).addClass("ui-state-highlight").find("p").html($(ui.draggable).attr("id").toUpperCase());
+						dropTo = $(ui.draggable).attr("id");
+					}
+				});
+				$("#dropFrom").droppable({
+					drop : function(event, ui) {
+						$(this).addClass("ui-state-highlight").find("p").html($(ui.draggable).attr("id").toUpperCase());
+						dropFrom = $(ui.draggable).attr("id");
+					}
+				});
+				
+				$("#calculateCurr").click(function(){	
+					amount = document.getElementById("numFrom").value;
+					if(amount <= 0)
+						document.getElementById("error").innerHTML = "*amount must be a valid number";
+					else if(dropFrom == null)
+						document.getElementById("error").innerHTML = "*you must select a currency to convert from";
+					else if(dropTo == null)
+						document.getElementById("error").innerHTML = "*you must select a currency to convert to";
+					else
+					{
+						document.getElementById("error").innerHTML = "";
+						$.post("convertCurrencyAPI.php", {from:dropFrom, to:dropTo, amt:amount},
+						function(data){					
+							$("#converted_value").html(parseFloat(data).toFixed(2));						
+						});
+					}
+				});
+			});
+
+		</script>
+	</head>
+
+	<body>
+		<h2 class="convert-header">CURRENCY</h2>
+		<div id="form-style">
+			<div  class="center" id= "conversion-row">
+				<input id="numFrom" type="text" ></input>
+				<div id="dropFrom" class="droppable, ui-widget-header default-cursor">
+					<p>
+						Drop Unit
+					</p>
+				</div>
+				<div id="converted_value" class="default-cursor">
+					<p>
+						value
+					</p>
+				</div>
+				<div id="dropTo" class="ui-widget-header default-cursor">
+					<p>
+						Drop Unit
+					</p>
+				</div>
+			</div>
+			
+			<div id="error" class="center error"><label></label></div>
+			
+			<!--have a separate dive to hold all choices-->
+			<div class= "center">
+				<button id="calculateCurr" class = "calculate" type="button">
+					Calculate
+				</button>
+			</div>
+			<div id="word_bank" class="center width_currency">
+
+				<div id="us_dollar" class = "unit_style">
+					<p>
+						US DOLLAR
+					</p>
+				</div>
+				<div id="israeli_shekel" class = "unit_style">
+					<p>
+						ISRAELI SHEKEL
+					</p>
+				</div>
+				<div id="euro" class = "unit_style">
+					<p>
+						EURO
+					</p>
+				</div>
+				<div id="british_pound" class = "unit_style">
+					<p>
+						BRITISH POUND
+					</p>
+				</div>
+				<div id="canadian_dollar" class = "unit_style">
+					<p>
+						CANADIAN DOLLAR
+					</p>
+				</div>
+			</div>
+
+		</div>
+		
+		<!--include the footer in the page-->
+		<!--the javascript will load the footer.html and assign it to the footer div-->
+		<script>
+			$(function() {
+				$("#footer").load("footer.html");
+			});
+		</script>
+		<div id="footer"></div>
+		
+	</body>
+
+</html>

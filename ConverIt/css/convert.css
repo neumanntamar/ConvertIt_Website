@@ -1,0 +1,165 @@
+#form-style {
+	border-style: solid;
+	border-width: 3px;
+	border-radius: 5px;
+	width: 950px;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+.center {
+	text-align: center;	
+}
+
+.default-cursor{
+	cursor: default !important;	
+}
+
+.convert-header{
+	text-align: center;
+	margin-top: 85px;
+	font-weight: bold;
+	font-family: arial;
+}
+
+#numFrom  {
+	height: 35px;
+	width: 150px;
+	display: inline-block;
+	background-color: white;
+	border: none;
+	text-align: center;
+	border-radius: 5px;
+	margin-left: 160px;
+	margin-right: 10px;
+	float: left;
+}
+#converted_value{
+	height: 36px;
+	width: 150px;
+	display: inline-block;
+	background-color: white;
+	border: none;
+	text-align: center;
+	border-radius: 5px;
+	margin-right: 10px;
+	padding-top: 7px;
+
+}
+
+
+#dropFrom {
+	display: inline-block;
+	background-color: #696969;
+	color: white;
+	height: 36px;
+	width: 150px;
+	font-family: "Arial";
+	border-radius: 5px;
+	margin-right: 9px;
+	padding-top: 7px;
+}
+
+#dropTo {
+	display: inline-block;
+	background-color: #696969;
+	color: white;
+	height: 36px;
+	width: 150px;
+	font-family: "Arial";
+	border-radius: 5px;
+	margin-right: 9px;
+	padding-top: 7px;
+}
+
+.calculate {
+	height: 30px;
+	width: 150px;
+	font-family: "Arial";
+	margin-top: 20px;
+	margin-bottom: 50px;
+	background-color: #black;
+	border-radius: 5px;
+}
+
+#word_bank {
+
+	display: flex;
+	justify-content: space-between;
+	margin: auto; /*center horizontally*/
+	margin-bottom: 20px;
+	
+}
+
+#conversion-row {
+	
+	margin: 50px 100px 10px -50px;
+	display: flex;
+	justify-content: space-between;
+	
+	
+}
+
+#calandar{
+	display: flex;
+	margin: 50px 150px 10px; 150px;
+	justify-content: space-between;
+}
+
+.error{
+	height:30px;
+	color:red;
+}
+
+.unit_style{
+	background-color: #696969;
+	color: white;
+	font-family: "Arial";
+	padding: 2px 5px 0 5px;
+	border-radius: 5px;
+	cursor: pointer !important;
+}  
+
+
+.width_currency{
+	width:70%;
+}
+
+.width_length{
+	width: 80%;
+}
+
+.width_temp{
+	width:30%;
+}
+
+.width_time{
+	
+	width:35%;
+}
+
+.width_weight{
+	
+	width: 45%;
+}
+
+#days, #hours, #datepicker, #datepicker2{
+
+	padding-right: 25px;
+	padding-left:25px;
+	padding-top: 8px;
+	height: 35px;
+	width: 150px;
+	display: inline-block;
+	background-color: white;
+	border: none;
+	text-align: center;
+	border-radius: 5px;
+	margin-left: 15px;
+	margin-right: 10px;
+	margin-bottom: 30px;
+
+}
+
+
+

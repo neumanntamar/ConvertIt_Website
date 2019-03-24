@@ -1,0 +1,125 @@
+#form-style {
+	border-style: solid;
+	border-width: 3px;
+	border-radius: 5px;
+	margin: 100px 200px 100px 200px;
+}
+.center {
+	text-align: center;
+}
+
+#numFrom, #converted_value {
+	height: 38px;
+	width: 150px;
+	display: inline-block;
+	background-color: white;
+	border: none;
+	text-align: center;
+	border-radius: 5px;
+	margin-right: 10px;
+	padding-top: .2cm;
+	
+}
+
+#dropFrom {
+	display: inline-block;
+	background-color: #696969;
+	color: white;
+	width: 170px;
+	font-family: "Arial";
+	border-radius: 5px;
+	margin-right: 10px;
+	padding-top: .2cm;
+}
+
+#dropTo {
+	display: inline-block;
+	background-color: #696969;
+	color: white;
+	font-family: "Arial";
+	border-radius: 5px;
+	width: 170px;
+	padding-top: .2cm;
+	
+}
+
+#converted_value{;
+	padding-top: .2cm;
+}
+
+#calculate {
+	height: 30px;
+	width: 150px;
+	font-family: "Arial";
+	margin-top: 20px;
+	margin-bottom: 50px;
+	background-color: #black;
+	border-radius: 5px;
+	
+}
+
+#word_bank {
+
+	margin: auto; /*center horizontally*/
+	margin-bottom: 20px;
+	width: 40%;
+	
+}
+
+#conversion-row {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	
+	}
+
+#pound {
+	float: left;
+	background-color: #696969;
+	color: white;
+	font-family: "Arial";
+	padding: .1cm .2cm 0 .2cm;
+	border-radius: 5px;
+}
+
+#kilogram {
+	/*float: right;*/
+	background-color: #696969;
+	color: white;
+	display: inline-block;
+	font-family: "Arial";
+	padding: .1cm .2cm 0 .2cm;
+	border-radius: 5px;
+}
+
+#ounce {
+    /*float: right;*/
+    background-color: #696969;
+    color: white;
+    display: inline-block;
+    font-family: "Arial";
+    padding: .1cm .2cm 0 .2cm;
+    border-radius: 5px;
+}
+
+#gram {
+    /*float: right;*/
+    background-color: #696969;
+    color: white;
+    display: inline-block;
+    font-family: "Arial";
+    padding: .1cm .2cm 0 .2cm;
+    border-radius: 5px;
+}
+
+#ton {
+    float: right;
+    background-color: #696969;
+    color: white;
+    display: inline-block;
+    font-family: "Arial";
+    padding: .1cm .2cm 0 .2cm;
+    border-radius: 5px;
+}
+
+
+

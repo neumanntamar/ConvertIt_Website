@@ -1,0 +1,23 @@
+.footer{
+    height: 25px;
+    width: 100%;
+    font-family: Calibri;
+    
+    position: relative; 
+    margin-top: 70px;
+	background-color: #222;
+	
+	border-bottom:  solid #80D73C;
+}
+
+#copyright{
+	color: #D3D3D3;
+	text-align: right;
+	margin-right: 10px;
+	
+}
+
+.bottom-space{
+    padding-top: 50px;
+    
+} 

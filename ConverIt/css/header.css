@@ -1,0 +1,37 @@
+.top-space{
+    padding-top: 50px;
+} 
+
+.logo-div{
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    
+}
+
+.logo-img{
+    position:relative;
+    float: left;
+    margin-left: 220px; 
+    margin-top:-15px; 
+    display: block; 
+    height: 80px;  
+}
+
+
+
+/*vertically center the menu elements*/
+.menu{
+	margin-top:-10px;
+	
+}
+
+/*horizontal space between menu elements*/
+.navbar-nav > li{
+  
+  margin-right: 20px;
+  
+}
+
+.container_menu{
+	margin-right:220px;
+}

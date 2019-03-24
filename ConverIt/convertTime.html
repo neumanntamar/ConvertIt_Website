@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame-->
+		<meta http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1">
+
+		<!--page title-->
+		<title>ConvertIt | Time</title>
+
+		<!--import scripts for javascript and bootstrap-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    	<!-- import script for calandar-->
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/locale/af.js"></script>
+    	
+		<!--incluce stylesheet-->
+		<link rel="stylesheet" href="css/convert.css">
+		<link rel="stylesheet" href="css/datepicker.css">
+
+		<!--include the header in the convert page-->
+		<!--the javascript will load the header.html and assign it to the header div-->
+		<script>
+			$(function() {
+				$("#header").load("header.html");
+			});
+		</script>
+		<div id="header"></div>
+
+		<!--import javascript code for conversion-->
+		<script src="./js/convertTime.js" type="text/javascript"></script>
+		<script src="./js/datepicker.js" type="text/javascript"></script>
+
+		<script>
+			/*calculations*/
+			var dropFrom;
+			var dropTo;
+			
+			/*datepicker*/
+			var date1;
+			var date2;
+
+			window.onload = function() {
+				
+				/*calculate on the top half of the page*/
+				$("#calculateTime").click(convertClick);
+
+				$("#second, #minute, #hour, #day").draggable({revert: true});
+				$("#dropTo").droppable({
+					drop : function(event, ui) {
+						$(this).addClass("ui-state-highlight").find("p").html($(ui.draggable).attr("id").toUpperCase());
+						dropTo = $(ui.draggable).attr("id");
+					}
+				});
+				$("#dropFrom").droppable({
+					drop : function(event, ui) {
+						$(this).addClass("ui-state-highlight").find("p").html($(ui.draggable).attr("id").toUpperCase());
+						dropFrom = $(ui.draggable).attr("id");
+					}
+				});
+
+				/*for the data picker on the bottom half of the page*/
+				
+				/*clear the textbox on refresh*/
+				$("#datepicker").val("");
+				$("#datepicker2").val("");
+				
+				$('#datepicker').datepicker({
+				    dateFormat: 'mm/dd/yy',
+				    onSelect: function(dateText, inst) { 
+				        val = $(this).val();
+				        date1 = new Date(val);
+				    }
+				});
+				
+				$("#datepicker2").datepicker({
+					dateFormat: 'mm/dd/yy',
+					onSelect: function(dateText, inst) {
+						val = $(this).val();
+						date2 = new Date(val);
+					}
+    			});
+    			
+    			$("#calculateCal").click(calculate);
+    			
+			};
+
+		</script>		
+		
+	</head>
+
+	<body>
+		<h2 class="convert-header">TIME</h2>
+		<div id="form-style">
+			<div  class="center" id= "conversion-row">
+				<input id="numFrom" type="text" >
+				</input>
+				<div id="dropFrom" class="droppable, ui-widget-header default-cursor">
+					<p>
+						Drop Unit
+					</p>
+				</div>
+				<div id="converted_value" class="default-cursor">
+					<p>
+						value
+					</p>
+				</div>
+				<div id="dropTo" class="ui-widget-header default-cursor">
+					<p>
+						Drop Unit
+					</p>
+				</div>
+			</div>
+			
+			<div id="error" class="center error"><label></label></div>
+			
+			<!--have a separate dive to hold all choices-->
+			<div class= "center">
+				<button id="calculateTime" class= "calculate" type="button">
+					Calculate
+				</button>
+			</div>
+			<div id="word_bank" class="center width_time">
+
+				<div id="second" class = "unit_style">
+					<p>
+						SECOND
+					</p>
+				</div>
+				<div id="minute" class = "unit_style">
+					<p>
+						MINUTE
+					</p>
+				</div>
+				<div id="hour" class = "unit_style">
+					<p>
+						HOUR
+					</p>
+				</div>
+				<div id="day" class = "unit_style">
+					<p>
+						DAY
+					</p>
+				</div>
+			</div>
+
+		</div>
+
+
+		<div id="form-style">
+			<div id = "calandar">
+				<p>Start date: <input type="text" id="datepicker"></p>
+				<p>End date: <input type="text" id="datepicker2"></p>
+			</div>
+			<div id="error2" class="center error"><label></label></div>
+			<div class= "center">
+				<button id="calculateCal" class="calculate" type="button">
+					Calculate
+				</button>
+			</div>
+			<div class="center">
+				<div id="days"><label></label></div>
+				<label>  OR  </label>
+				<div id="hours"><label></label></div>
+			</div>
+		</div>
+		
+		
+		<!--include the footer in the page-->
+		<!--the javascript will load the footer.html and assign it to the footer div-->
+		<script>
+			$(function() {
+				$("#footer").load("footer.html");
+			});
+		</script>
+		<div id="footer"></div>
+
+	</body>
+
+</html>

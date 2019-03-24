@@ -1,0 +1,3 @@
+This website uses bootstrap and jquery to create an interactive website that converts different units of measurement. It includes a carousel, menu, dropdown, draggable/droppable, collapsable and email form.
+The user will input the measurement he  would like to convert into a text box, and chose the units he would like to convert from and to. 
+This website is hosted @ https://convertit.000webhostapp.com/convertWeight.html

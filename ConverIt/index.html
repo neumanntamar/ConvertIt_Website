@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame-->
+		<meta http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1">
+
+		<!--page title-->
+		<title>ConvertIt | Home</title>
+
+		<link rel = "stylesheet" href = "css/index.css">
+		<!--import scripts for javascript and bootstrap-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 		
+ 		
+ 		<!--detect if it's a mobile site-->
+ 		<script src="js/detectmobilebrowser.js"></script>
+ 		
+		<!--include the header in the home page-->
+		<!--the javascript will load the header.html and assign it to the header div-->
+		<script>
+			$(function() {
+				$("#header").load("header.html");
+			});
+		</script>
+		<div id="header"></div>
+				
+		<script type="text/javascript" src="js/jquery.waterwheelCarousel.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var carousel = $("#carousel").waterwheelCarousel({
+					flankingItems : 3,
+					movingToCenter : function($item) {
+						$('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+					},
+					movedToCenter : function($item) {
+						$('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+					},
+					movingFromCenter : function($item) {
+						$('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+					},
+					movedFromCenter : function($item) {
+						$('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+					},
+					clickedCenter : function($item) {
+						$('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+					},
+					autoPlay : -1600,
+					sizeMultiplier: .6,
+					separationMultiplier : .4
+				});
+				$('#prev').bind('click', function() {
+					carousel.prev();
+					return false;
+				});
+				$('#next').bind('click', function() {
+					carousel.next();
+					return false;
+				});
+				$('#reload').bind('click', function() {
+					newOptions = eval("(" + $('#newoptions').val() + ")");
+					carousel.reload(newOptions);
+					return false;
+				});
+			});
+		</script>
+
+		
+	</head>
+
+	<body>
+
+		<div class="container">
+
+			<div id="carousel">
+				<img src="images/colorScale.png" height="150px" id="item-1" />
+				<img src="images/colorClock.png" height="150px" id="item-2" />
+				<img src="images/colorRuler.png" height="150px" id="item-3" />
+				<img src="images/colorThermometer.png" height="150px" id="item-4" />
+				<img src="images/colorSpedometer.png" height="150px" id="item-5" />
+				<img src="images/colorCup.png" height="150px" id="item-6" />
+				<img src="images/currency.png" height="150px" id="item-7" />
+
+			</div>
+		</div>
+	    <div id="aboutText" class = "panel panel-default">
+	    	<div class = "panel panel-heading"><strong>About us</strong></div>
+			<div class = "panel panel-body">
+				<p>
+						ConvertIt is an interactive website that allows you to convert between different units of measurments.
+						If you are traveling, doing homework or simply curious about different conversions, ConvertIt allows you to choose
+						between:
+				</p>
+				<div id = "conversionList">
+				    <span class="title">Weight:</span> Pounds, Kilograms, Ounces, Grams and Tons
+	 			<br><span class="title">Length:</span> Millimeters, Centimerters, Inches, Feet, Yards, Meters, Kilometers and Miles
+	 			<br><span class="title">Temperature:</span> Celcius, Farenheit and Kelvin
+	 			<br><span class="title">Time:</span> Seconds, Minutes, Hours and Days
+	 			<br><span class="title">Currency:</span> US Dollars, Israeli Shekels, Euros, British Pounds and Canadian Dollars
+				</div>
+				<br>
+				<p>
+					 Just chose an option from the Conversions dropdown to get started!
+				</p>
+			 </div>
+
+		</div>
+		
+
+		
+		
+		
+		
+		<!--include the footer in the page-->
+		<!--the javascript will load the footer.html and assign it to the footer div-->
+		<script>
+			$(function() {
+				$("#footer").load("footer.html");
+			});
+		</script>
+		<div id="footer"></div>
+	</body>
+
+</html>
